@@ -8,7 +8,9 @@
 ## FrontEnd 폴더 구조
 
 components - 자주 사용하는 컴포넌트(헤더, 사이드바, 모달 등) 페이지
-pages - 앞으로 만들게 될 페이지들...
-css - css 파일 분리하는 폴더
+
+pages - 앞으로 만들게 될 페이지들 여기 아래에 추가하기
+
+css - css 파일 분리하는 폴더, css 파일은 되도록 js 파일과 동일한 이름으로 생성하기 (예: main.js > main.css)
 
 App.js, index.js들은 건드리지 말기
