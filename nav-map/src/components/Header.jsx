@@ -6,6 +6,9 @@ import "../css/Header.css";
 const Header = () => {
   const navigate = useNavigate();
 
+  const handleLandingBtnClick = () => {
+    navigate("/");
+  };
   const handleLoginBtnClick = () => {
     navigate("/login");
   };
@@ -15,7 +18,9 @@ const Header = () => {
       {/* Navbar */}
       <nav className="navbar">
         <div className="navbar-content">
-          <h1 className="logo">KW NAVMAP</h1>
+          <h1 className="logo" onClick={handleLandingBtnClick}>
+            KW NAVMAP
+          </h1>
           <button className="button" onClick={handleLoginBtnClick}>
             로그인
           </button>

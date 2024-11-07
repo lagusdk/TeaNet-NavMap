@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+
 import "../css/LandingPage.css";
 
 const LandingPage = () => {
@@ -68,8 +67,6 @@ const LandingPage = () => {
 
   return (
     <div className="landing-page">
-      <Header />
-
       {/* Hero Section */}
       <div
         className="hero-section fade-in"
@@ -241,8 +238,6 @@ const LandingPage = () => {
           </button>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 };

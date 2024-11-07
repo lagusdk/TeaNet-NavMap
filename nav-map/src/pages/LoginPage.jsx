@@ -1,9 +1,29 @@
-import React, { useState } from "react";
-import Header from "../components/Header";
+import React, { useState, useEffect, useRef } from "react";
 
 import "../css/LoginPage.css";
 
 const LoginPage = () => {
+  const stepCardsRef = useRef([]);
+  const fadeInElementsRef = useRef([]);
+  const loginCardRef = useRef(null); // 로그인 카드에 대한 ref 추가
+
+  useEffect(() => {
+    // 스크롤 핸들러
+    const handleScroll = () => {
+      if (loginCardRef.current) {
+        const cardPosition = loginCardRef.current.getBoundingClientRect().top;
+        if (cardPosition < window.innerHeight - 100) {
+          loginCardRef.current.classList.add("visible");
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // 초기 호출
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const [formData, setFormData] = useState({
     id: "",
     password: "",
@@ -24,9 +44,10 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
-      <Header />
-      <div className="login-card visible">
+    <div className="login-container">
+      <div className="login-card" ref={loginCardRef}>
+        {" "}
+        {/* ref 추가 */}
         <form onSubmit={handleSubmit} className="login-form">
           <div>
             <input
@@ -66,12 +87,20 @@ const LoginPage = () => {
           </button>
 
           <div className="links">
-            <button className="link">비밀번호 찾기</button>
+            <button type="button" className="link">
+              비밀번호 찾기
+            </button>
             <div className="link-group">
-              <button className="link">개인번호 조회</button>
-              <button className="link">비밀번호 초기 등록</button>
+              <button type="button" className="link">
+                개인번호 조회
+              </button>
+              <button type="button" className="link">
+                비밀번호 초기 등록
+              </button>
             </div>
-            <button className="link">계정정보 처리방침</button>
+            <button type="button" className="link">
+              계정정보 처리방침
+            </button>
           </div>
         </form>
       </div>
