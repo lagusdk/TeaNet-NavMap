@@ -1,32 +1,31 @@
-import React, { useState } from 'react';
-import './LoginPage.css';
-
+import React, { useState } from "react";
+import "../css/LoginPage.css";
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
-    id: '',
-    password: '',
-    saveId: false
+    id: "",
+    password: "",
+    saveId: false,
   });
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
   };
 
   return (
     <div className="login-container">
-      <div className="card">
+      <div>
+        {/* <div className="card"> */}
         <div className="logo">KW NAVMAP</div>
-
         <form onSubmit={handleSubmit} className="login-form">
           <div>
             <input
@@ -61,7 +60,9 @@ const LoginPage = () => {
             <label className="checkbox-label">아이디 저장</label>
           </div>
 
-          <button type="submit" className="login-button">로그인</button>
+          <button type="submit" className="login-button">
+            로그인
+          </button>
 
           <div className="links">
             <button className="link">비밀번호 찾기</button>
@@ -77,4 +78,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage; 
+export default LoginPage;
