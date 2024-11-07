@@ -6,39 +6,6 @@
   padding: 2rem;
 }
 
-.navbar {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  padding-bottom: 1rem;
-}
-
-.navbar-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem;
-  height: 6rem;
-}
-
-.navbar-line {
-  border: none;
-  height: 0.25px;
-  background-color: #7a7a7a;
-  width: 100%;
-  position: relative;
-}
-
-.logo {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #ff0000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
 .text-center {
   text-align: center;
 }
@@ -260,19 +227,6 @@
   color: #a3a3a3;
   font-size: 2.5rem;
   margin-bottom: 4rem;
-}
-
-.footer {
-  border-top: 1px solid #2d2d2d;
-  padding: 4rem 3rem;
-  margin-top: 10rem;
-}
-
-.footer-text {
-  text-align: center;
-  color: #6b6b6b;
-  font-size: 2rem;
-  margin-top: 2rem;
 }
 
 /* 애니메이션 클래스 */

@@ -1,7 +1,11 @@
 import React, { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import "../css/LandingPage.css";
 
 const LandingPage = () => {
+  const navigate = useNavigate();
   const heroTitleRef = useRef(null);
   const heroSubtitleRef = useRef(null);
   const startButtonRef = useRef(null);
@@ -58,16 +62,13 @@ const LandingPage = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleLoginBtnClick = () => {
+    navigate("/login");
+  };
+
   return (
     <div className="landing-page">
-      {/* Navbar */}
-      <nav className="navbar">
-        <div className="navbar-content">
-          <h1 className="logo">KW NAVMAP</h1>
-          <button className="button">로그인</button>
-        </div>
-        <hr className="navbar-line" />
-      </nav>
+      <Header />
 
       {/* Hero Section */}
       <div
@@ -231,21 +232,17 @@ const LandingPage = () => {
         <h3 className="section-title">나만의 길을 찾아보세요</h3>
         <p className="cta-description">AI와 함께 더 명확한 미래를 설계하세요</p>
         <div className="button-container">
-          <button className="button large" ref={ctaButtonRef}>
+          <button
+            className="button large"
+            ref={ctaButtonRef}
+            onClick={handleLoginBtnClick}
+          >
             로그인하고 시작하기
           </button>
         </div>
       </div>
 
-      {/* Footer */}
-      <footer
-        className="footer fade-in"
-        ref={(el) => fadeInElementsRef.current.push(el)}
-      >
-        <div className="container">
-          <p className="footer-text">@Teanet</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

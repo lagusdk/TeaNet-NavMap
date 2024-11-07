@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Header from "../components/Header";
+
 import "../css/LoginPage.css";
 
 const LoginPage = () => {
@@ -22,10 +24,9 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="login-container">
-      <div>
-        {/* <div className="card"> */}
-        <div className="logo">KW NAVMAP</div>
+    <div>
+      <Header />
+      <div className="login-card visible">
         <form onSubmit={handleSubmit} className="login-form">
           <div>
             <input
