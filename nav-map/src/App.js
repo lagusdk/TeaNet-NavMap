@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+
+// 이 아래에 페이지 컴포넌트 임포트
 import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
 
@@ -13,6 +15,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
+        {/* 이 자리에 컴포넌트 추가 */}
       </Routes>
       <Footer />
     </Router>
