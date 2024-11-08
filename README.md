@@ -13,4 +13,6 @@ pages - 앞으로 만들게 될 페이지들 여기 아래에 추가하기
 
 css - css 파일 분리하는 폴더, css 파일은 되도록 js 파일과 동일한 이름으로 생성하기 (예: main.js > main.css)
 
+img - 사용될 이미지 저장하는 폴더
+
 App.js, index.js들은 건드리지 말기
