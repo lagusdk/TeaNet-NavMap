@@ -1,5 +1,5 @@
 /* Landing Page Styles with CSS Animation Enhancements */
-.landing-page {
+.landing {
   min-height: 100vh;
   background-color: black;
   color: white;
@@ -102,7 +102,7 @@
   margin: 20rem auto;
 }
 
-.card {
+.landing .card {
   background-color: #1a1a1a;
   border: 1px solid #2d2d2d;
   padding: 4rem;
@@ -113,12 +113,12 @@
   transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
-.card.visible {
+.landing.card.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.card:hover {
+.landing .card:hover {
   background-color: #2d2d2d;
 }
 
@@ -138,13 +138,13 @@
   color: #ff0000;
 }
 
-.card-title {
+.landing .card-title {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 2rem;
 }
 
-.card-description {
+.landing .card-description {
   list-style: none;
   padding: 0;
   color: #a3a3a3;

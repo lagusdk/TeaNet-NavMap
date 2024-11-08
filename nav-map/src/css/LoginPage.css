@@ -1,19 +1,9 @@
-.login-card {
+.login {
+  background: black;
+}
+
+.login .card {
   background-color: #1a1a1a;
-  border: 1px solid #2d2d2d;
   padding: 4rem;
-  border-radius: 1.5rem;
-  transition: background-color 0.3s;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-}
-
-.login-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.login-card:hover {
-  background-color: #2d2d2d;
+  /* transition: opacity 1.5s ease-out, transform 1.5s ease-out; */
 }
