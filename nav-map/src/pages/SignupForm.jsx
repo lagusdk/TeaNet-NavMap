@@ -38,9 +38,28 @@ const SignupForm = () => {
     }));
   };
 
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePhone = (phone) => {
+    const phoneRegex = /^\d{3}-\d{4}-\d{4}$/;
+    return phoneRegex.test(phone);
+  };
+
+  const validatePassword = (password) => {
+    const passwordRegex = /^(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{8,}$/;
+    return passwordRegex.test(password);
+  };
+
   const handleSendEmailVerification = () => {
     if (!formData.email) {
       alert('이메일을 입력해주세요.');
+      return;
+    }
+    if (!validateEmail(formData.email)) {
+      alert('유효한 이메일 형식을 입력해주세요.');
       return;
     }
     const code = generateVerificationCode();
@@ -61,6 +80,10 @@ const SignupForm = () => {
   const handleSendPhoneVerification = () => {
     if (!formData.phone) {
       alert('전화번호를 입력해주세요.');
+      return;
+    }
+    if (!validatePhone(formData.phone)) {
+      alert('유효한 전화번호 형식을 입력해주세요. (예: 010-0000-0000)');
       return;
     }
     const code = generateVerificationCode();
@@ -86,6 +109,10 @@ const SignupForm = () => {
     }
     if (formData.password !== formData.confirmPassword) {
       alert('비밀번호가 일치하지 않습니다.');
+      return;
+    }
+    if (!validatePassword(formData.password)) {
+      alert('비밀번호는 8자 이상이어야 하며, 최소 1개의 기호를 포함해야 합니다.');
       return;
     }
     console.log('Form submitted:', formData);
@@ -189,7 +216,8 @@ const SignupForm = () => {
                   value={formData.phoneVerificationCode}
                   onChange={handleChange}
                 />
-                <button type="button" onClick={handleVerifyPhone}>확인</button>
+                <button className="confirm-button" type="button" onClick={handleVerifyPhone}>확인</button>
+
               </div>
             )}
             {verificationStatus.phoneVerified && (
@@ -205,14 +233,14 @@ const SignupForm = () => {
               name="password"
               type="password"
               required
-              placeholder="8자 이상 입력"
+              placeholder="최소 8자, 특수 문자 1개 포함 필수"
               value={formData.password}
               onChange={handleChange}
             />
           </div>
 
           <div className="input-group">
-            <label htmlFor="confirmPassword">비밀번호 확인 *</label>
+          <label htmlFor="confirmPassword">비밀번호 확인 *</label>
             <input
               className="input"
               id="confirmPassword"
@@ -236,3 +264,5 @@ const SignupForm = () => {
 };
 
 export default SignupForm;
+
+add
