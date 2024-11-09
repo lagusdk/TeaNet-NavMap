@@ -57,3 +57,6 @@ def create_tables():
 
     conn.commit()
     conn.close()
+
+# Run the function to create tables(테이블 생성 함수 호출)
+create_tables()
