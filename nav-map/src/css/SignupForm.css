@@ -1,0 +1,119 @@
+.container {
+    min-height: 100vh;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.card {
+    background-color: #1a1a1a;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 600px;
+}
+
+.title {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.signup-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #ffffff; /* 모든 레이블 글씨를 흰색으로 */
+}
+
+.input-row {
+    display: flex;
+    gap: 8px;
+}
+
+.success-message {
+    color: #22c55e;
+    font-size: 14px;
+}
+
+.submit-button {
+    background-color: #ef4444;
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #dc2626;
+}
+
+.verification-button {
+    background-color: #ef4444;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.verification-button:hover {
+    background-color: #dc2626;
+}
+
+.confirm-button {
+    background-color: #ef4444;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    white-space: nowrap; 
+}
+
+
+.confirm-button:hover {
+    background-color: #dc2626;
+}
+
+.redirect-link {
+    color: #9ca3af;
+    text-align: center;
+    font-size: 14px;
+}
+
+.redirect-link a {
+    color: #ef4444;
+    text-decoration: none;
+}
+
+.redirect-link a:hover {
+    color: #dc2626;
+}
+input[type="date"] {
+    color: white; /* 달력 텍스트 색상 흰색 */
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* 달력 아이콘 색상 반전 */
+}
+
