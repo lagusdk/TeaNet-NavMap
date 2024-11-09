@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "../css/LoginPage.css";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     id: "",
     password: "",
@@ -20,6 +23,10 @@ const LoginPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
+  };
+
+  const handleSignupBtnClick = () => {
+    navigate("/sign");
   };
 
   return (
@@ -73,8 +80,12 @@ const LoginPage = () => {
                 <button type="button" className="link">
                   개인번호 조회
                 </button>
-                <button type="button" className="link">
-                  비밀번호 초기 등록
+                <button
+                  type="button"
+                  className="link"
+                  onClick={handleSignupBtnClick}
+                >
+                  회원가입
                 </button>
               </div>
               <button type="button" className="link">

@@ -16,7 +16,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/Sign" element={<SignupForm />} />
+        <Route path="/sign" element={<SignupForm />} />
 
         {/* 이 자리에 컴포넌트 추가 */}
       </Routes>
