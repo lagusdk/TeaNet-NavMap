@@ -1,7 +1,10 @@
 from fastapi import FastAPI
 from typing import Union
+from db import conn
 
 app = FastAPI()
+
+conn.create_tables()
 
 @app.get("/")
 def root():
