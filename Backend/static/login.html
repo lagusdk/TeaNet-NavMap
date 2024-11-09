@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script>
+        async function handleLogin(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const formData = new FormData(event.target);
+            const id = formData.get("id");
+            const password = formData.get("password");
+
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams({ id, password }),
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    window.location.href = "/";
+                } else {
+                    throw new Error("Invalid credentials");
+                }
+            } catch (error) {
+                // Show error message
+                document.getElementById('error').textContent = error.message;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Login</h1>
+    <form id="login-form">
+        <label for="id">User ID:</label>
+        <input type="text" id="id" name="id" required><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        <button type="submit">Login</button>
+    </form>
+    <p id="error" style="color: red;"></p>
+    <script>
+        // Attach the event listener to the form
+        document.getElementById("login-form").addEventListener("submit", handleLogin);
+    </script>
+</body>
+</html>

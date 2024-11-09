@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script>
+        async function logout() {
+            const response = await fetch('/api/logout', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            if (response.ok) {
+                // Redirect to login page or show a message
+                window.location.href = '/static/login.html';
+            } else {
+                alert('Failed to log out. Please try again.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <!-- Button to trigger the logout function -->
+    <button onclick="logout()">Logout</button>
+</body>
+</html>
