@@ -264,5 +264,3 @@ const SignupForm = () => {
 };
 
 export default SignupForm;
-
-add
