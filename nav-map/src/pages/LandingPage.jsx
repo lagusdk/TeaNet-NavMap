@@ -78,7 +78,7 @@ const LandingPage = () => {
               AI가 제시하는 <span className="highlight">맞춤형 길잡이</span>
             </h2>
             <p className="hero-subtitle" ref={heroSubtitleRef}>
-              전공 커리큘럼부터 진로 계획까지, 당신만의 특별한 여정을 AI와 함께
+              전공 커리큘럼부터 진로 계획까지, <br /> 당신만의 특별한 여정을 AI와 함께
               설계하세요
             </p>
             <div className="button-container">
