@@ -37,7 +37,6 @@ const LandingPage = () => {
 
     // 다음 버튼 요소 스타일 제어
     if (ctaButtonRef2.current) {
-
       ctaButtonRef2.current.style.visibility = "visible";
 
       ctaButtonRef2.current.style.opacity = "1";
@@ -70,11 +69,9 @@ const LandingPage = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  
   // "다음" 버튼 클릭 시 JobOrMajor 페이지로 이동
   const handleNextPage = () => {
-    navigate("/job-or-major");  // /job-or-major 경로로 이동
-
+    navigate("/job-or-major"); // /job-or-major 경로로 이동
   };
 
   const handleLoginBtnClick = () => {
@@ -94,11 +91,15 @@ const LandingPage = () => {
               AI가 제시하는 <span className="highlight">맞춤형 길잡이</span>
             </h2>
             <p className="hero-subtitle" ref={heroSubtitleRef}>
-              전공 커리큘럼부터 진로 계획까지, <br /> 당신만의 특별한 여정을 AI와 함께
-              설계하세요
+              전공 커리큘럼부터 진로 계획까지, <br /> 당신만의 특별한 여정을
+              AI와 함께 설계하세요
             </p>
             <div className="button-container">
-              <button className="button large" ref={startButtonRef}>
+              <button
+                className="button large"
+                ref={startButtonRef}
+                onClick={handleNextPage}
+              >
                 시작하기
               </button>
             </div>
@@ -256,18 +257,8 @@ const LandingPage = () => {
               로그인하고 시작하기
             </button>
           </div>
-
-          <div className="next-button-container">
-            <button
-              className="next button"  
-              ref={ctaButtonRef2}
-              onClick={handleNextPage}  // "다음" 버튼 클릭 시 JobOrMajor로 이동
-            >
-              다음
-            </button>
-          </div>
+        </div>
       </div>
-    </div>
     </div>
   );
 };
