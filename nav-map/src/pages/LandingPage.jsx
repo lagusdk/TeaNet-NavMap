@@ -9,7 +9,8 @@ const LandingPage = () => {
   const heroSubtitleRef = useRef(null);
   const startButtonRef = useRef(null);
   const stepCardsRef = useRef([]);
-  const ctaButtonRef = useRef(null);
+  const ctaButtonRef1 = useRef(null); // 로그인 버튼 ref
+  const ctaButtonRef2 = useRef(null); // 다음 버튼 ref
   const fadeInElementsRef = useRef([]);
 
   useEffect(() => {
@@ -29,9 +30,17 @@ const LandingPage = () => {
     });
 
     // CTA 버튼 초기 설정
-    if (ctaButtonRef.current) {
-      ctaButtonRef.current.style.visibility = "visible";
-      ctaButtonRef.current.style.opacity = "1";
+    if (ctaButtonRef1.current) {
+      ctaButtonRef1.current.style.visibility = "visible";
+      ctaButtonRef1.current.style.opacity = "1";
+    }
+
+    // 다음 버튼 요소 스타일 제어
+    if (ctaButtonRef2.current) {
+
+      ctaButtonRef2.current.style.visibility = "visible";
+
+      ctaButtonRef2.current.style.opacity = "1";
     }
 
     // 스크롤 핸들러
@@ -60,6 +69,13 @@ const LandingPage = () => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  
+  // "다음" 버튼 클릭 시 JobOrMajor 페이지로 이동
+  const handleNextPage = () => {
+    navigate("/job-or-major");  // /job-or-major 경로로 이동
+
+  };
 
   const handleLoginBtnClick = () => {
     navigate("/login");
@@ -234,14 +250,24 @@ const LandingPage = () => {
           <div className="button-container">
             <button
               className="button large"
-              ref={ctaButtonRef}
+              ref={ctaButtonRef1}
               onClick={handleLoginBtnClick}
             >
               로그인하고 시작하기
             </button>
           </div>
-        </div>
+
+          <div className="next-button-container">
+            <button
+              className="next button"  
+              ref={ctaButtonRef2}
+              onClick={handleNextPage}  // "다음" 버튼 클릭 시 JobOrMajor로 이동
+            >
+              다음
+            </button>
+          </div>
       </div>
+    </div>
     </div>
   );
 };

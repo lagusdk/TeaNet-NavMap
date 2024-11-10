@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
 import SignupForm from "./pages/SignupForm";
+import JobOrMajor from "./pages/JobOrMajor";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/sign" element={<SignupForm />} />
+        <Route path="/job-or-major" element={<JobOrMajor />} />
 
         {/* 이 자리에 컴포넌트 추가 */}
       </Routes>

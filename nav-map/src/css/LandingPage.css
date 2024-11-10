@@ -274,3 +274,41 @@
     padding: 0.5rem 1rem;
   }
 }
+
+
+/* 다음 버튼 css */
+.next-button-container {
+  position: relative;
+  bottom: 20px; 
+  left: 50%;
+  transform: translateX(-50%); 
+  z-index: 10; 
+  margin-top: 2rem;
+  text-align: center; 
+}
+
+.next {
+  background-color: #ff0000; 
+  padding: 1rem 2rem; 
+  font-size: 1.5rem; 
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-section {
+    padding: 4rem 0.5rem;
+  }
+
+  .features-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+}
+
+
+
+
+
+
+
