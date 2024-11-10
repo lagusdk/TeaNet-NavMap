@@ -1,5 +1,5 @@
 import React from "react";
-import Roadmap from "./Roadmap";
+import Roadmap from "../components/Roadmap";
 import GenerateHeader from "../components/GenerateHeader";
 import "../css/Roadmap.css";
 
