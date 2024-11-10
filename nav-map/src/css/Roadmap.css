@@ -1,0 +1,14 @@
+.generate-roadmap-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+}
+.roadmap-container {
+  width: 80%;
+  height: 70vh;
+  border: solid white;
+  border-radius: 1rem;
+}
