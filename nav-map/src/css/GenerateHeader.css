@@ -1,0 +1,68 @@
+.roadmap-header-container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4rem;
+  padding: 1.5rem;
+  background-color: black;
+  border-radius: 0.75rem;
+  border: 2px solid white;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.regenerate-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.regenerate-text {
+  color: rgb(163, 163, 163);
+}
+
+.download-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: rgb(220, 38, 38);
+  color: white;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s;
+}
+
+.download-button:hover {
+  background-color: rgb(185, 28, 28);
+}
+
+.content-section {
+  margin-top: 1.5rem;
+}
+
+.roadmap-title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.roadmap-description {
+  color: rgb(163, 163, 163);
+}
+
+.icon-small {
+  width: 1rem;
+  height: 1rem;
+}
+
+.icon-medium {
+  width: 1.25rem;
+  height: 1.25rem;
+}
