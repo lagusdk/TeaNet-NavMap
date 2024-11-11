@@ -69,7 +69,6 @@ const LandingPage = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // "다음" 버튼 클릭 시 JobOrMajor 페이지로 이동
   const handleNextPage = () => {
     navigate("/job-or-major"); // /job-or-major 경로로 이동
   };

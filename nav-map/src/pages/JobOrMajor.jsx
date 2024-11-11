@@ -35,13 +35,13 @@ const JobOrMajor = () => {
       </h1>
 
       <div className="Detail-jobormajor" ref={detailRef}>
-        <button className="button-option" onClick={() => navigate("/roadmap1")}>
+        <button className="button-option" onClick={() => navigate("/CareerPath")}>
           관심있는 분야(직무)
           <br />
           로드맵 보기
           <p ref={pRef1}>확실하게 분야를 결정한 당신에게</p>
         </button>
-        <button className="button-option" onClick={() => navigate("/roadmap2")}>
+        <button className="button-option" onClick={() => navigate("/MajorPath")}>
           내 전공
           <br />
           로드맵 보기
@@ -53,3 +53,5 @@ const JobOrMajor = () => {
 };
 
 export default JobOrMajor;
+
+

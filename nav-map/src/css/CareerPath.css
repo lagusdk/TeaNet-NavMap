@@ -1,0 +1,104 @@
+/* CareerPath.css */
+
+.CardContainer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden; /* 넘치는 부분 숨김 */
+}
+
+.ScrollWrapper {
+  position: relative;
+  overflow: hidden; /* x축 스크롤 숨김 */
+  padding: 24px;
+}
+
+.CardContent {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* 더 많은 열 허용 */
+  gap: 16px;
+  transition: transform 0.3s ease;
+  min-width: min-content;
+}
+
+.CardItem {
+  flex-shrink: 0;
+  border: 1px solid #E31936;
+  border-radius: 8px;
+  padding: 16px 24px;
+  background-color: #000000;
+  color: #ffffff;
+  width: 200px; /* 고정된 너비 */
+  height: 80px; /* 고정된 높이 */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CardItem:hover {
+  transform: translateY(-5px);
+  background-color: #E31936;
+  box-shadow: 0 4px 8px rgba(227, 25, 54, 0.3);
+}
+
+.CardItem.selected {
+  background-color: #E31936;
+}
+
+.ScrollButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #E31936;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  z-index: 20;
+  transition: all 0.2s ease-in-out;
+  opacity: 0.7;
+}
+
+.ScrollButton:hover {
+  background-color: #C41730;
+  transform: translateY(-50%) scale(1.1);
+  opacity: 1;
+  box-shadow: 0 2px 8px rgba(227, 25, 54, 0.5);
+}
+
+.ScrollButtonLeft {
+  left: 24px;
+}
+
+.ScrollButtonRight {
+  right: 24px;
+}
+
+.GradientMask {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 96px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.GradientMaskLeft {
+  left: 0;
+  background: linear-gradient(to right, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.GradientMaskRight {
+  right: 0;
+  background: linear-gradient(to left, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+}
