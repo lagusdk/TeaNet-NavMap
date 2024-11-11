@@ -9,6 +9,9 @@ const Header = () => {
   const handleLandingBtnClick = () => {
     navigate("/");
   };
+  const handleAboutBtnClick = () => {
+    navigate("/about");
+  };
   const handleLoginBtnClick = () => {
     navigate("/login");
   };
@@ -21,9 +24,14 @@ const Header = () => {
           <h1 className="logo" onClick={handleLandingBtnClick}>
             KW NAVMAP
           </h1>
+          <div className="navbar-menu">
+          <h2 className="about" onClick={handleAboutBtnClick}>
+            'bout
+          </h2>
           <button className="button" onClick={handleLoginBtnClick}>
-            로그인
+            LogIn
           </button>
+          </div>
         </div>
         <hr className="navbar-line" />
       </nav>

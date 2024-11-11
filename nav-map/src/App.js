@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 
 // 이 자리에 페이지 컴포넌트 임포트
 import LandingPage from "./pages/LandingPage";
+import AboutTeanet from "./pages/AboutTeanet";
 import LoginPage from "./pages/LoginPage";
 import SignupForm from "./pages/SignupForm";
 import JobOrMajor from "./pages/JobOrMajor";
@@ -28,6 +29,7 @@ const App = () => {
       >
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/about" element={<AboutTeanet />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/sign" element={<SignupForm />} />
           <Route path="/job-or-major" element={<JobOrMajor />} />
