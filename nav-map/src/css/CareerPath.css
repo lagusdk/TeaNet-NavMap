@@ -1,104 +1,63 @@
-/* CareerPath.css */
-
-.CardContainer {
+.career-buttons-container {
   width: 100%;
-  max-width: 800px;
+  min-height: 100vh;
+  background-color: black;
+  padding: 2rem;
+}
+
+.career-buttons-inner {
+  max-width: 960px; /* 6xl */
   margin: 0 auto;
-  position: relative;
-  overflow: hidden; /* 넘치는 부분 숨김 */
 }
 
-.ScrollWrapper {
-  position: relative;
-  overflow: hidden; /* x축 스크롤 숨김 */
-  padding: 24px;
-}
-
-.CardContent {
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(4, 1fr); /* 더 많은 열 허용 */
-  gap: 16px;
-  transition: transform 0.3s ease;
-  min-width: min-content;
-}
-
-.CardItem {
-  flex-shrink: 0;
-  border: 1px solid #E31936;
-  border-radius: 8px;
-  padding: 16px 24px;
-  background-color: #000000;
-  color: #ffffff;
-  width: 200px; /* 고정된 너비 */
-  height: 80px; /* 고정된 높이 */
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
+.career-buttons-title {
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.CardItem:hover {
-  transform: translateY(-5px);
-  background-color: #E31936;
-  box-shadow: 0 4px 8px rgba(227, 25, 54, 0.3);
-}
-
-.CardItem.selected {
-  background-color: #E31936;
-}
-
-.ScrollButton {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #E31936;
   color: white;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
+  font-size: 2rem;
+  margin-bottom: 3rem; /* mb-12 */
+}
+
+.button-grid {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  cursor: pointer;
-  border: none;
-  z-index: 20;
-  transition: all 0.2s ease-in-out;
-  opacity: 0.7;
+  gap: 1rem; /* gap-4 */
+  margin-bottom: 3rem; /* mb-12 */
 }
 
-.ScrollButton:hover {
-  background-color: #C41730;
-  transform: translateY(-50%) scale(1.1);
-  opacity: 1;
-  box-shadow: 0 2px 8px rgba(227, 25, 54, 0.5);
+.career-button {
+  white-space: nowrap;
+  padding: 0.75rem 2rem; /* px-8 py-3 */
+  border-radius: 9999px; /* rounded-full */
+  border: 1px solid red; /* border-red-600 */
+  transition: all 0.3s; /* transition-all duration-300 */
+  color: white; /* text-white */
+  background-color: black;
 }
 
-.ScrollButtonLeft {
-  left: 24px;
+.career-button.default:hover {
+  background-color: rgba(255, 0, 0, 0.1); /* hover:bg-red-600/10 */
 }
 
-.ScrollButtonRight {
-  right: 24px;
+.career-button.selected {
+  background-color: red; /* bg-red-600 */
+  border-color: red; /* border-red-600 */
+  color: white; /* text-white */
 }
 
-.GradientMask {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 96px;
-  z-index: 10;
-  pointer-events: none;
+.button-center {
+  display: flex;
+  justify-content: center;
 }
 
-.GradientMaskLeft {
-  left: 0;
-  background: linear-gradient(to right, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+.create-button {
+  background-color: red; /* bg-red-600 */
+  color: white; /* text-white */
+  padding: 0.75rem 3rem; /* px-12 py-3 */
+  border-radius: 9999px; /* rounded-full */
+  transition: background-color 0.3s; /* transition-colors duration-300 */
 }
 
-.GradientMaskRight {
-  right: 0;
-  background: linear-gradient(to left, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+.create-button:hover {
+  background-color: darkred; /* hover:bg-red-700 */
 }

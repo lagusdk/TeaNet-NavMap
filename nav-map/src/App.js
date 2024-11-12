@@ -34,8 +34,8 @@ const App = () => {
           <Route path="/sign" element={<SignupForm />} />
           <Route path="/job-or-major" element={<JobOrMajor />} />
           <Route path="/roadmap" element={<GenerateRoadmap />} />
-          <Route path="/CareerPath" element={<CareerPath />} />
-          <Route path="/MajorPath" element={<MajorPath />} />
+          <Route path="/career-path" element={<CareerPath />} />
+          <Route path="/major-path" element={<MajorPath />} />
           {/* 이 자리에 새 경로 추가 */}
         </Routes>
       </div>
