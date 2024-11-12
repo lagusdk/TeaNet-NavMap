@@ -25,12 +25,12 @@ const Header = () => {
             KW NAVMAP
           </h1>
           <div className="navbar-menu">
-          <h2 className="about" onClick={handleAboutBtnClick}>
-            'bout
-          </h2>
-          <button className="button" onClick={handleLoginBtnClick}>
-            LogIn
-          </button>
+            <h2 className="about" onClick={handleAboutBtnClick}>
+              about
+            </h2>
+            <button className="button" onClick={handleLoginBtnClick}>
+              로그인
+            </button>
           </div>
         </div>
         <hr className="navbar-line" />
