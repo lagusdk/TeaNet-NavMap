@@ -1,63 +1,71 @@
-.career-buttons-container {
+.career-container {
   width: 100%;
   min-height: 100vh;
   background-color: black;
   padding: 2rem;
 }
 
-.career-buttons-inner {
-  max-width: 960px; /* 6xl */
-  margin: 0 auto;
-}
-
-.career-buttons-title {
+.career-title {
   text-align: center;
   color: white;
-  font-size: 2rem;
-  margin-bottom: 3rem; /* mb-12 */
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
 }
 
-.button-grid {
+.career-title-highlight {
+  color: #f56565;
+}
+
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+.slider-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem; /* gap-4 */
-  margin-bottom: 3rem; /* mb-12 */
+  gap: 1rem;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider-item {
+  flex-shrink: 0;
 }
 
 .career-button {
-  white-space: nowrap;
-  padding: 0.75rem 2rem; /* px-8 py-3 */
-  border-radius: 9999px; /* rounded-full */
-  border: 1px solid red; /* border-red-600 */
-  transition: all 0.3s; /* transition-all duration-300 */
-  color: white; /* text-white */
+  padding: 0.75rem 2rem;
+  border-radius: 20px;
+  border: 3px solid red;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s;
   background-color: black;
+  width: 20vw;
+  height: 5rem;
 }
 
-.career-button.default:hover {
-  background-color: rgba(255, 0, 0, 0.1); /* hover:bg-red-600/10 */
+.career-button:hover {
+  background-color: rgba(245, 101, 101, 0.1);
 }
 
 .career-button.selected {
-  background-color: red; /* bg-red-600 */
-  border-color: red; /* border-red-600 */
-  color: white; /* text-white */
+  background-color: red;
+  border-color: red;
 }
 
-.button-center {
+.create-button-container {
   display: flex;
   justify-content: center;
 }
 
 .create-button {
-  background-color: red; /* bg-red-600 */
-  color: white; /* text-white */
-  padding: 0.75rem 3rem; /* px-12 py-3 */
-  border-radius: 9999px; /* rounded-full */
-  transition: background-color 0.3s; /* transition-colors duration-300 */
+  background-color: #f56565;
+  color: white;
+  padding: 0.75rem 3rem;
+  border-radius: 9999px;
+  transition: background-color 0.3s;
 }
 
 .create-button:hover {
-  background-color: darkred; /* hover:bg-red-700 */
+  background-color: #c53030;
 }
