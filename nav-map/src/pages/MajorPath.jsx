@@ -5,11 +5,13 @@ const MajorPath = () => {
     // 전공 선택 시 알림을 띄워주는 함수
     const selectMajor = (major) => {
         alert(`${major} 전공이 선택되었습니다.`);
+    };
 
     // 로드맵 생성 버튼 클릭 시 알림을 띄워주는 함수
     const createRoadmap = () => {
         alert("로드맵이 생성되었습니다.");
-    }
+    };
+
     return (
         <div className="container">
           <h1>나의 전공을 선택해 주세요.</h1>
@@ -31,6 +33,6 @@ const MajorPath = () => {
           </div>
         </div>
     );
-  };
-}
+};
+
 export default MajorPath;

@@ -9,10 +9,6 @@ const JobOrMajor = () => {
   const pRef1 = useRef(null); // p 태그용 ref 추가
   const pRef2 = useRef(null); // 두 번째 p 태그용 ref 추가
 
-  const handleBtnClick = (path) => () => {
-    navigate(`/${path}`);
-  };
-
   useEffect(() => {
     if (titleRef.current) {
       titleRef.current.classList.add("visible");
@@ -39,19 +35,13 @@ const JobOrMajor = () => {
       </h1>
 
       <div className="Detail-jobormajor" ref={detailRef}>
-        <button
-          className="button-option"
-          onClick={handleBtnClick("career-path")}
-        >
+        <button className="button-option" onClick={() => navigate("/career-path")}>
           관심있는 분야(직무)
           <br />
           로드맵 보기
           <p ref={pRef1}>확실하게 분야를 결정한 당신에게</p>
         </button>
-        <button
-          className="button-option"
-          onClick={handleBtnClick("/major-path")}
-        >
+        <button className="button-option" onClick={() => navigate("/major-path")}>
           내 전공
           <br />
           로드맵 보기
@@ -63,3 +53,5 @@ const JobOrMajor = () => {
 };
 
 export default JobOrMajor;
+
+
