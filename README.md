@@ -16,3 +16,19 @@ css - css 파일 분리하는 폴더, css 파일은 되도록 js 파일과 동�
 img - 사용될 이미지 저장하는 폴더
 
 App.js, index.js들은 건드리지 말기
+
+## BackEnd
+
+### 실행
+cd Backend
+uvicorn main:app --reload
+
+### 의존성
+fastapi
+uvicorn
+itsdangerous
+sqlalchemy
+python-dotenv
+python-multipart
+httpx
+pycryptodome

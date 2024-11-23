@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException, Request, Form
 from fastapi.responses import HTMLResponse, RedirectResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.sessions import SessionMiddleware
+from auth import router as auth_router
 from db import SessionLocal, init_db
 from models import Member
 from config import Config
@@ -34,6 +35,7 @@ app = FastAPI()
 app.add_middleware(SessionMiddleware, secret_key=Config.SECRET_KEY)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
+app.include_router(auth_router, prefix="/api")
 
 @app.get("/", response_class=HTMLResponse)
 def index(request: Request):

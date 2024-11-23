@@ -36,11 +36,13 @@
 </head>
 <body>
     <h1>Login</h1>
-    <form id="login-form">
-        <label for="id">User ID:</label>
-        <input type="text" id="id" name="id" required><br>
+    <form action="/api/login" method="post">
+        <label for="student_id">User ID:</label>
+        <input type="text" id="student_id" name="student_id" required>
+        <br><br>
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br>
+        <input type="password" id="password" name="password" required>
+        <br><br>
         <button type="submit">Login</button>
     </form>
     <p id="error" style="color: red;"></p>
