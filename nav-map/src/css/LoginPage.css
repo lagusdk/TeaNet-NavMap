@@ -91,14 +91,7 @@
 .link-group .link {
   flex: 1;
 }
-/* 로고 스타일 추가 */
-.logo {
-  color: #ef4444;
-  font-size: 32px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 30px;
-}
+
 /* 반응형 디자인 */
 @media (max-width: 480px) {
   .login {

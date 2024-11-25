@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
   background-color: black;
 }
 
@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  padding: 0.5rem;
   height: 3rem;
 }
 
@@ -28,13 +28,11 @@
 }
 
 .logo {
-  font-size: 2rem;
-  font-weight: bold;
   color: #ff0000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px;
 }
 
 .navbar-content .menu-content {
@@ -45,4 +43,5 @@
 
 .navbar-content .button {
   font-size: 1rem;
+  padding: 9px 20px;
 }
