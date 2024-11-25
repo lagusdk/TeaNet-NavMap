@@ -8,7 +8,7 @@ from models import Member
 from config import Config
 import logging
 from pydantic import BaseModel
-from langchain import generate_keywords
+from conversation import generate_keywords
 
 # Initialize logging
 logging.basicConfig(
