@@ -14,22 +14,27 @@ const MajorPath = () => {
 
     return (
         <div className="container">
-          <h1>나의 전공을 선택해 주세요.</h1>
+          <h1>나의 <span class="highlight">전공</span>을 선택해 주세요.</h1>
           <div className="box">
-            <div className="scrollable">
-              <p className="section-title">정보융합학부</p>
-              <button className="major-button" onClick={() => selectMajor('Data Science')}>Data Science</button>
-              <button className="major-button" onClick={() => selectMajor('Visual Tech')}>Visual Tech</button>
-    
-              <p className="section-title">학부 이름</p>
-              <button className="sub-major-button">세부전공1</button>
-              <button className="sub-major-button">세부전공2</button>
-    
-              <p className="section-title">학부 이름</p>
-              <button className="sub-major-button">세부전공1</button>
-              <button className="sub-major-button">세부전공2</button>
+            <p className="section-title">정보융합학부</p>
+            <div className="majorbtns">
+              <button className="majorButton" onClick={() => selectMajor('Data Science')}>데이터 사이언스 전공</button>
+              <button className="majorButton" onClick={() => selectMajor('Visual Tech')}>비주얼 테크놀로지 전공</button>
             </div>
-            <button className="roadmap-button" onClick={createRoadmap}>로드맵 생성</button>
+    
+            <p className="section-title">컴퓨터정보공학부</p>
+            <div className="majorbtns">
+              <button className="majorButton">지능컴퓨팅시스템전공</button>
+              <button className="majorButton">지능정보전공</button>
+            </div>
+    
+            <p className="section-title">소프트웨어학부</p>
+            <div className="majorbtns">
+              <button className="majorButton">소프트웨어전공</button>
+              <button className="majorButton">인공지능전공</button>
+            </div>
+              
+            <button className="roadmapButton" onClick={createRoadmap}>로드맵 생성</button>
           </div>
         </div>
     );
