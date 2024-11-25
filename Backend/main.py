@@ -7,6 +7,8 @@ from db import SessionLocal, init_db
 from models import Member
 from config import Config
 import logging
+from pydantic import BaseModel
+from langchain import generate_keywords
 
 # Initialize logging
 logging.basicConfig(
@@ -29,6 +31,9 @@ class DBHelper:
             return session.query(Member).filter_by(student_id=student_id, password=password).first()
         finally:
             session.close()
+
+class FieldRequest(BaseModel):
+    field: str
 
 app = FastAPI()
 
@@ -65,6 +70,14 @@ def get_user_session(request: Request):
 def logout(request: Request):
     request.session.clear()
     return JSONResponse({"success": True})
+
+@app.post("/generate-keywords/")
+def generate_keywords_endpoint(request: FieldRequest):
+    try:
+        result = generate_keywords(request.field)
+        return {"status": "success", "data": result}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
 
 if __name__ == "__main__":
     import uvicorn
