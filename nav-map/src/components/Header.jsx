@@ -4,11 +4,11 @@ import { useNavigate } from "react-router-dom";
 import "../css/Header.css";
 
 const HeaderContents = [
-  { name: "test-landing", path: "" },
-  { name: "test-job-or-major", path: "job-or-major" },
-  { name: "test-career-path", path: "career-path" },
-  { name: "test-major-path", path: "major-path" },
-  { name: "test-roadmap", path: "roadmap" },
+  { name: "Home", path: "" },
+  { name: "Job or Major", path: "job-or-major" },
+  { name: "Career Path", path: "career-path" },
+  { name: "Major Path", path: "major-path" },
+  { name: "Roadmap", path: "roadmap" },
   { name: "about", path: "about" },
 ];
 
