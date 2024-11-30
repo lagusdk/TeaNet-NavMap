@@ -24,19 +24,6 @@ cd Backend
 uvicorn main:app --reload
 
 ### 의존성
-fastapi
-uvicorn
-itsdangerous
-sqlalchemy
-python-dotenv
-python-multipart
-httpx
-pycryptodome
-.
-.
-.
-
-requirements.text 로 설치 
--> pip install -r requirements.text
+pip install -r requirements.text
 
 !! python 3.9 ~ 3.12 버전 사용 !! 
