@@ -1,0 +1,68 @@
+{
+  "initialNodes": [
+    {
+      "id": "1",
+      "position": { "x": 0, "y": 0 },
+      "data": { "label": "데이터사이언스개론" },
+      "type": "default"
+    },
+    {
+      "id": "2",
+      "position": { "x": 0, "y": 100 },
+      "data": { "label": "AI수학" },
+      "type": "default"
+    },
+    {
+      "id": "3",
+      "position": { "x": 200, "y": 100 },
+      "data": { "label": "빅데이터프로그래밍" },
+      "type": "default"
+    },
+    {
+      "id": "4",
+      "position": { "x": 0, "y": 200 },
+      "data": { "label": "데이터베이스" },
+      "type": "default"
+    },
+    {
+      "id": "5",
+      "position": { "x": 200, "y": 200 },
+      "data": { "label": "딥러닝프로그래밍" },
+      "type": "default"
+    },
+    {
+      "id": "6",
+      "position": { "x": 400, "y": 100 },
+      "data": { "label": "텍스트마이닝" },
+      "type": "default"
+    },
+    {
+      "id": "7",
+      "position": { "x": 400, "y": 200 },
+      "data": { "label": "데이터시각화" },
+      "type": "default"
+    },
+    {
+      "id": "8",
+      "position": { "x": 600, "y": 100 },
+      "data": { "label": "강화학습" },
+      "type": "default"
+    },
+    {
+      "id": "9",
+      "position": { "x": 600, "y": 200 },
+      "data": { "label": "자연어처리" },
+      "type": "default"
+    }
+  ],
+  "initialEdges": [
+    { "id": "e1-2", "source": "1", "target": "2", "animated": true },
+    { "id": "e2-3", "source": "2", "target": "3", "animated": true },
+    { "id": "e3-4", "source": "3", "target": "4", "animated": true },
+    { "id": "e4-5", "source": "4", "target": "5", "animated": true },
+    { "id": "e5-6", "source": "5", "target": "6", "animated": true },
+    { "id": "e6-7", "source": "6", "target": "7", "animated": true },
+    { "id": "e7-8", "source": "7", "target": "8", "animated": true },
+    { "id": "e8-9", "source": "8", "target": "9", "animated": true }
+  ]
+}

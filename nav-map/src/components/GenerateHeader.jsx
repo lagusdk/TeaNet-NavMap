@@ -1,10 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../css//GenerateHeader.css";
+import "../css/GenerateHeader.css";
 import refresh from "../imgs/refresh.svg";
 import download from "../imgs/download.svg";
 
-const GenerateHeader = () => {
+const GenerateHeader = ({ type }) => {
   const navigate = useNavigate();
 
   const handleJobOrMajorClick = () => {
@@ -25,10 +25,28 @@ const GenerateHeader = () => {
       </div>
 
       <div className="content-section">
-        <h1 className="roadmap-title">Data Science</h1>
-        <p className="roadmap-description">
-          선택한 세부 전공에 대한 로드맵을 AI로 생성했습니다.
-        </p>
+        {type == 1 ? (
+          <>
+            <h1 className="roadmap-title">AI Engineer</h1>
+            <p className="roadmap-description">
+              선택한 분야에 대한 로드맵을 AI로 생성했습니다.
+            </p>
+          </>
+        ) : type == 2 ? (
+          <>
+            <h1 className="roadmap-title">Data Science</h1>
+            <p className="roadmap-description">
+              선택한 세부 전공에 대한 로드맵을 AI로 생성했습니다.
+            </p>
+          </>
+        ) : type == 3 ? (
+          <>
+            <h1 className="roadmap-title">웹 개발</h1>
+            <p className="roadmap-description">
+              선택한 개념에 대한 로드맵을 AI로 생성했습니다.
+            </p>
+          </>
+        ) : null}
       </div>
     </div>
   );

@@ -1,10 +1,16 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../css/CareerPath.css";
 
 const CareerPath = () => {
+  const navigate = useNavigate();
   const [selectedItem, setSelectedItem] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(4);
   const [isAnimating, setIsAnimating] = useState(true);
+
+  const handleCreateBtnClick = () => {
+    navigate(`/roadmap?type=1`);
+  };
 
   const items = [
     { id: 1, contents: "IT Product Manager" },
@@ -114,10 +120,7 @@ const CareerPath = () => {
 
       {selectedItem !== null && (
         <div className="create-button-container">
-          <button
-            className="create-button"
-            onClick={() => console.log("로드맵 생성")}
-          >
+          <button className="create-button" onClick={handleCreateBtnClick}>
             로드맵 생성
           </button>
         </div>
