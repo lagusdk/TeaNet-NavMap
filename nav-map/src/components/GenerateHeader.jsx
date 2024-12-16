@@ -4,7 +4,7 @@ import "../css/GenerateHeader.css";
 import refresh from "../imgs/refresh.svg";
 import download from "../imgs/download.svg";
 
-const GenerateHeader = ({ isCareer }) => {
+const GenerateHeader = ({ type }) => {
   const navigate = useNavigate();
 
   const handleJobOrMajorClick = () => {
@@ -25,21 +25,21 @@ const GenerateHeader = ({ isCareer }) => {
       </div>
 
       <div className="content-section">
-        {isCareer === 1 ? (
+        {type == 1 ? (
           <>
             <h1 className="roadmap-title">AI Engineer</h1>
             <p className="roadmap-description">
               선택한 분야에 대한 로드맵을 AI로 생성했습니다.
             </p>
           </>
-        ) : isCareer === 2 ? (
+        ) : type == 2 ? (
           <>
             <h1 className="roadmap-title">Data Science</h1>
             <p className="roadmap-description">
               선택한 세부 전공에 대한 로드맵을 AI로 생성했습니다.
             </p>
           </>
-        ) : isCareer === 3 ? (
+        ) : type == 3 ? (
           <>
             <h1 className="roadmap-title">웹 개발</h1>
             <p className="roadmap-description">

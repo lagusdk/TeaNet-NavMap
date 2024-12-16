@@ -9,7 +9,7 @@ const CareerPath = () => {
   const [isAnimating, setIsAnimating] = useState(true);
 
   const handleCreateBtnClick = () => {
-    navigate(`/roadmap`);
+    navigate(`/roadmap?type=1`);
   };
 
   const items = [
