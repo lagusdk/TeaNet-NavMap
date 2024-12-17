@@ -6,11 +6,11 @@
   padding: 0.5rem;
 }
 
-.text-center {
+.landing .text-center {
   text-align: center;
 }
 
-.button {
+.landing .button {
   background-color: #ff0000;
   color: white;
   padding: 0.5rem 1rem;
@@ -28,7 +28,7 @@
   opacity: 1;
 }
 
-.button.large {
+.landing .button.large {
   font-size: 1.25rem;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
@@ -37,33 +37,33 @@
   transform: translateY(50px);
   transition: opacity 1.5s ease-out, transform 1.5s ease-out;
   transition-delay: 0.4s;
-  transform: translateY(-5px); 
+  transform: translateY(-5px);
 }
 
-.button.large.visible {
+.landing .button.large.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.button:hover {
+.landing .button:hover {
   background-color: #ff4d4d;
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(255, 77, 77, 0.5);
 }
 
-.button-container {
+.landing .button-container {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
 }
 
-.hero-section {
+.landing .hero-section {
   padding: 8rem 8rem;
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.hero-title {
+.landing .hero-title {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -72,16 +72,16 @@
   transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
-.hero-title.visible {
+.landing .hero-title.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.highlight {
+.landing .highlight {
   color: #ff0000;
 }
 
-.hero-subtitle {
+.landing .hero-subtitle {
   font-size: 1.5rem;
   color: #a3a3a3;
   margin-bottom: 2rem;
@@ -91,15 +91,15 @@
   transition-delay: 0.2s;
 }
 
-.hero-subtitle.visible {
+.landing .hero-subtitle.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.features-container {
+.landing .features-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 8rem; /* Adjusted gap for more space between cards */
+  gap: 8rem;
   margin: 8rem auto;
 }
 
@@ -114,7 +114,7 @@
   transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
-.landing.card.visible {
+.landing .card.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -123,7 +123,7 @@
   background-color: #2d2d2d;
 }
 
-.icon-container {
+.landing .icon-container {
   height: 3rem;
   width: 3rem;
   background-color: rgba(255, 0, 0, 0.1);
@@ -134,7 +134,7 @@
   margin: 0 auto 1rem;
 }
 
-.icon {
+.landing .icon {
   font-size: 1.5rem;
   color: #ff0000;
 }
@@ -143,6 +143,7 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  color: #ffffff;
 }
 
 .landing .card-description {
@@ -152,24 +153,25 @@
   font-size: 1rem;
 }
 
-.feature-item {
+.landing .feature-item {
   display: flex;
   align-items: center;
-  gap: 1rem; /* Increased gap for better spacing */
+  gap: 1rem;
 }
 
-.how-it-works {
+.landing .how-it-works {
   margin-bottom: 2rem;
 }
 
-.section-title {
+.landing .section-title {
   font-size: 1.75rem;
   font-weight: bold;
   margin-bottom: 2rem;
   text-align: center;
+  color: #ffffff;
 }
 
-.steps-container.vertical {
+.landing .steps-container.vertical {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -177,7 +179,7 @@
   margin-bottom: 2rem;
 }
 
-.step-card {
+.landing .step-card {
   background-color: #1a1a1a;
   padding: 2rem;
   border-radius: 1rem;
@@ -190,125 +192,72 @@
   transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
-.step-card.visible {
+.landing .step-card.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.step-number {
+.landing .step-number {
   font-size: 1.5rem;
   font-weight: bold;
   color: #ff0000;
   margin-bottom: 1rem;
 }
 
-.step-title {
+.landing .step-title {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
-.step-description {
+.landing .step-description {
   color: #a3a3a3;
   font-size: 1rem;
 }
 
-.call-to-action {
+.landing .call-to-action {
   background-color: #1a1a1a;
   padding: 2rem;
   border-radius: 1rem;
   text-align: center;
   margin-bottom: 4rem;
-  opacity: 1;
-  transform: none;
-  transition: none;
-  
 }
 
-.cta-description {
+.landing .cta-description {
   color: #a3a3a3;
   font-size: 1.5rem;
   margin-bottom: 2rem;
 }
 
-/* 애니메이션 클래스 */
-.fade-in {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* 전체 요소 애니메이션 향상 */
-.visible {
-  animation: fadeIn 1.5s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .hero-section {
-    padding: 4rem 0.5rem;
-  }
-
-  .features-container {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .button.large {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-  }
-}
-
-
-/* 다음 버튼 css */
-.next-button-container {
+.landing .next-button-container {
   position: relative;
-  bottom: 20px; 
+  bottom: 20px;
   left: 50%;
-  transform: translateX(-50%); 
-  z-index: 10; 
+  transform: translateX(-50%);
+  z-index: 10;
   margin-top: 2rem;
-  text-align: center; 
+  text-align: center;
 }
 
-.next {
-  background-color: #ff0000; 
-  padding: 1rem 2rem; 
-  font-size: 1.5rem; 
+.landing .next {
+  background-color: #ff0000;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
   border-radius: 10px;
 }
 
 @media screen and (max-width: 768px) {
-  .hero-section {
+  .landing .hero-section {
     padding: 4rem 0.5rem;
   }
 
-  .features-container {
+  .landing .features-container {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
 
+  .landing .button.large {
+    opacity: 1 !important; /* 초기 상태를 보이게 설정 */
+    transform: translateY(0) !important;
+  }
 }
-
-
-
-
-
-
-
