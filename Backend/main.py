@@ -8,7 +8,7 @@ from models import Member
 from config import Config
 import logging
 from pydantic import BaseModel
-from conversation import generate_keywords
+# from conversation import generate_keywords
 
 # Initialize logging
 logging.basicConfig(
@@ -50,12 +50,12 @@ def index(request: Request):
     with open("static/index.html", "r", encoding="utf-8") as f:
         return HTMLResponse(content=f.read())
 
-@app.post("/api/login", response_class=JSONResponse)
+@app.post("/api/login", response_class=RedirectResponse)
 def login(request: Request, id: str = Form(...), password: str = Form(...)):
     user = DBHelper.get_user(student_id=id, password=password)
     if user:
         request.session["user"] = user.name
-        return JSONResponse({"success": True})
+        return RedirectResponse("/roadmap", status_code=303)  # 로그인 후 리다이렉트
     else:
         return JSONResponse({"success": False, "error": "Invalid credentials"}, status_code=400)
 
@@ -71,13 +71,23 @@ def logout(request: Request):
     request.session.clear()
     return JSONResponse({"success": True})
 
-@app.post("/generate-keywords/")
-def generate_keywords_endpoint(request: FieldRequest):
+# @app.post("/generate-keywords/")
+# def generate_keywords_endpoint(request: FieldRequest):
     try:
         result = generate_keywords(request.field)
         return {"status": "success", "data": result}
     except Exception as e:
         return {"status": "error", "message": str(e)}
+    
+from fastapi.responses import RedirectResponse
+
+@app.get("/roadmap", response_class=HTMLResponse)
+def roadmap_selection(request: Request):
+    user = request.session.get("user")
+    if not user:
+        return RedirectResponse("/static/login.html")
+    with open("static/roadmap_selection.html", "r", encoding="utf-8") as f:
+        return HTMLResponse(content=f.read())
 
 if __name__ == "__main__":
     import uvicorn

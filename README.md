@@ -24,6 +24,6 @@ cd Backend
 uvicorn main:app --reload
 
 ### 의존성
-pip install -r requirements.text
+pip install -r requirements.txt
 
 !! python 3.9 ~ 3.12 버전 사용 !! 

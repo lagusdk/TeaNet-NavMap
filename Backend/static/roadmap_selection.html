@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로드맵 선택</title>
+</head>
+<body>
+    <h1>로드맵 선택</h1>
+    <form id="roadmapForm">
+        <label>
+            <input type="radio" name="roadmap_type" value="coursemap" required>
+            전공 로드맵
+        </label>
+        <label>
+            <input type="radio" name="roadmap_type" value="careermap">
+            진로 로드맵
+        </label>
+        <button type="submit">선택</button>
+    </form>
+    <div id="keywords"></div>
+
+    <script>
+        document.getElementById("roadmapForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const roadmapType = formData.get("roadmap_type");
+
+            // API 요청
+            const response = await fetch(`/roadmap/${roadmapType}/keywords`);
+            const result = await response.json();
+
+            // 결과 표시
+            if (result.keywords) {
+                document.getElementById("keywords").innerHTML = `
+                    <h2>키워드 목록</h2>
+                    <ul>${result.keywords.map(k => `<li>${k}</li>`).join('')}</ul>
+                `;
+            } else {
+                document.getElementById("keywords").innerHTML = "키워드를 가져오는 데 실패했습니다.";
+            }
+        });
+    </script>
+</body>
+</html>

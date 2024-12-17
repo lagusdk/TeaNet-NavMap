@@ -7,10 +7,9 @@ Base = declarative_base()
 class Member(Base):
     __tablename__ = "members"
     student_id = Column(String(10), primary_key=True, index=True)
-    name = Column(String(30), nullable=False)
-    password = Column(String(30), nullable=False)
-    department = Column(String(30), nullable=False)
-    major = Column(String(30), nullable=False)
+    name = Column(String(30), nullable=True)
+    department = Column(String(30), nullable=True)
+    major = Column(String(30), nullable=True)
 
     courses = relationship("CourseMember", back_populates="member")
     career_interests = relationship("CareerInterest", back_populates="member")

@@ -1,10 +1,12 @@
+import httpx, json, base64
 from fastapi import APIRouter, Form, Request
 from fastapi.responses import JSONResponse
-import httpx
-import json
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_v1_5
-import base64
+from bs4 import BeautifulSoup
+from db import SessionLocal, insert_member
+from models import Member
+from sqlalchemy.exc import SQLAlchemyError
 
 router = APIRouter()
 
@@ -72,15 +74,34 @@ async def klas_login(student_id: str, password: str):
 
             response = await client.post(login_url, json=payload, headers=headers)
 
-            # 디버깅 정보 출력
-            print("Response Status Code:", response.status_code)
-            print("Response Text:", response.text[:500])
-
-            # 응답 처리
+            # Step 5: 로그인 성공 여부 확인
             if response.status_code == 200:
                 response_json = response.json()
                 if response_json.get("errorCount") == 0:
-                    return {"status": "success", "redirectUrl": response_json.get("redirectUrl")}
+                    print("Klas Login Successful")
+
+                    # Step 6: 사용자 정보 페이지 요청
+                    info_url = "https://klas.kw.ac.kr/std/lis/evltn/LrnSttusStdPage.do"
+                    info_response = await client.get(info_url)
+
+                    if info_response.status_code == 200:
+                        soup = BeautifulSoup(info_response.text, "html.parser")
+
+                        # HTML 파싱: 이름, 학과, 학번 추출
+                        department = soup.find("td", string="소속").find_next_sibling("td").text.strip()
+                        student_id_extracted = soup.find("td", string="학번").find_next_sibling("td").text.strip()
+                        user_name = soup.find("td", string="이름").find_next_sibling("td").text.strip()
+
+                        return {
+                            "status": "success",
+                            "student_id": student_id_extracted,
+                            "name": user_name,
+                            "department": department,
+                            "redirectUrl": response_json.get("redirectUrl")
+                        }
+                    else:
+                        return {"status": "fail", "message": "Failed to fetch user information"}
+
                 else:
                     error_message = response_json.get("fieldErrors")[0].get("message")
                     return {"status": "fail", "message": error_message}
@@ -91,14 +112,42 @@ async def klas_login(student_id: str, password: str):
         print("Unhandled Exception:", str(e))
         return {"status": "fail", "message": str(e)}
 
+    except Exception as e:
+        print("Unhandled Exception:", str(e))
+        return {"status": "fail", "message": str(e)}
+
+class DBHelper:
+    @staticmethod
+    def get_session():
+        return SessionLocal()
+
 # 로그인 엔드포인트
 @router.post("/login")
-async def login(student_id: str = Form(...), password: str = Form(...)):
+async def login(request: Request, student_id: str = Form(...), password: str = Form(...)):
     try:
+        # Klas 로그인 시도
         result = await klas_login(student_id, password)
+
         if result["status"] == "success":
+            # Klas에서 가져온 정보
+            user_name = result.get("name", "Unknown")  # 기본값 설정
+            department = result.get("department", "Undecided")
+            major = result.get("major", None)  # 전공은 없으면 NULL
+
+            print(f"Klas Login Success: student_id={student_id}, name={user_name}, department={department}, major={major}")
+
+            # 사용자 정보 저장
+            insert_member(student_id=student_id, name=user_name, department=department, major=major)
+
+            # 세션에 학번 및 이름 저장
+            request.session["student_number"] = student_id
+            request.session["user_name"] = user_name
+
             return JSONResponse({"success": True, "redirectUrl": result["redirectUrl"]})
         else:
+            print(f"Login Failed: student_id={student_id}, reason={result['message']}")
             return JSONResponse({"success": False, "message": result["message"]})
+
     except Exception as e:
-        return JSONResponse({"success": False, "message": str(e)})
+        print(f"Unexpected Error: {e}")
+        return JSONResponse({"success": False, "message": "An unexpected error occurred"})
