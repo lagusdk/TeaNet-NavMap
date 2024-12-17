@@ -41,6 +41,7 @@
 
 /* 각 버튼 스타일 */
 .button-option {
+  white-space: nowrap;
   background-color: black;
   color: white;
   font-size: 1.5rem;
