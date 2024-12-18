@@ -1,0 +1,125 @@
+{
+	"skillTrees": [
+	  {
+		"key": "Big Data Analyst",
+		"value": {
+		  "initialNodes": [
+			{"id": "1", "position": {"x": 0, "y": 0}, "data": {"label": "기초 프로그래밍"}, "type": "default"},
+			{"id": "2", "position": {"x": 0, "y": 100}, "data": {"label": "수학 (선형대수, 통계학)"}, "type": "default"},
+			{"id": "3", "position": {"x": 0, "y": 200}, "data": {"label": "데이터베이스 및 SQL"}, "type": "default"},
+			{"id": "4", "position": {"x": 0, "y": 300}, "data": {"label": "빅데이터 처리 기술 (Hadoop, Spark)"}, "type": "default"},
+			{"id": "5", "position": {"x": 0, "y": 400}, "data": {"label": "프로그래밍 언어 (Python, R)"}, "type": "default"},
+			{"id": "6", "position": {"x": 0, "y": 500}, "data": {"label": "머신러닝 기초"}, "type": "default"},
+			{"id": "7", "position": {"x": 0, "y": 600}, "data": {"label": "데이터 시각화 (Tableau, matplotlib)"}, "type": "default"},
+			{"id": "8", "position": {"x": 0, "y": 700}, "data": {"label": "클라우드 서비스 (AWS, GCP)"}, "type": "default"},
+			{"id": "9", "position": {"x": 0, "y": 800}, "data": {"label": "빅데이터 아키텍처 설계"}, "type": "default"},
+			{"id": "10", "position": {"x": 0, "y": 900}, "data": {"label": "고급 분석 기법 (딥러닝, 강화학습)"}, "type": "default"},
+			{"id": "11", "position": {"x": 0, "y": 1000}, "data": {"label": "프로젝트 관리"}, "type": "default"}
+		  ],
+		  "initialEdges": [
+			{"id": "e1-2", "source": "1", "target": "2", "animated": true},
+			{"id": "e2-3", "source": "2", "target": "3", "animated": true},
+			{"id": "e3-4", "source": "3", "target": "4", "animated": true},
+			{"id": "e4-5", "source": "4", "target": "5", "animated": true},
+			{"id": "e5-6", "source": "5", "target": "6", "animated": true},
+			{"id": "e6-7", "source": "6", "target": "7", "animated": true},
+			{"id": "e7-8", "source": "7", "target": "8", "animated": true},
+			{"id": "e8-9", "source": "8", "target": "9", "animated": true},
+			{"id": "e9-10", "source": "9", "target": "10", "animated": true},
+			{"id": "e10-11", "source": "10", "target": "11", "animated": true}
+		  ]
+		}
+	  },
+	  {
+		"key": "AI Expert",
+		"value": {
+		  "initialNodes": [
+			{"id": "1", "position": {"x": 0, "y": 0}, "data": {"label": "기초 프로그래밍"}, "type": "default"},
+			{"id": "2", "position": {"x": 0, "y": 100}, "data": {"label": "수학 (선형대수, 통계학)"}, "type": "default"},
+			{"id": "3", "position": {"x": 0, "y": 200}, "data": {"label": "머신러닝 기초"}, "type": "default"},
+			{"id": "4", "position": {"x": 0, "y": 300}, "data": {"label": "딥러닝 이론"}, "type": "default"},
+			{"id": "5", "position": {"x": 0, "y": 400}, "data": {"label": "신경망 구조 설계"}, "type": "default"},
+			{"id": "6", "position": {"x": 0, "y": 500}, "data": {"label": "컴퓨터 비전"}, "type": "default"},
+			{"id": "7", "position": {"x": 0, "y": 600}, "data": {"label": "자연어 처리"}, "type": "default"},
+			{"id": "8", "position": {"x": 0, "y": 700}, "data": {"label": "강화학습"}, "type": "default"},
+			{"id": "9", "position": {"x": 0, "y": 800}, "data": {"label": "모델 최적화 및 튜닝"}, "type": "default"},
+			{"id": "10", "position": {"x": 0, "y": 900}, "data": {"label": "MLOps (모델 배포 및 운영)"}, "type": "default"},
+			{"id": "11", "position": {"x": 0, "y": 1000}, "data": {"label": "프로젝트 관리"}, "type": "default"}
+		  ],
+		  "initialEdges": [
+			{"id": "e1-2", "source": "1", "target": "2", "animated": true},
+			{"id": "e2-3", "source": "2", "target": "3", "animated": true},
+			{"id": "e3-4", "source": "3", "target": "4", "animated": true},
+			{"id": "e4-5", "source": "4", "target": "5", "animated": true},
+			{"id": "e5-6", "source": "5", "target": "6", "animated": true},
+			{"id": "e6-7", "source": "6", "target": "7", "animated": true},
+			{"id": "e7-8", "source": "7", "target": "8", "animated": true},
+			{"id": "e8-9", "source": "8", "target": "9", "animated": true},
+			{"id": "e9-10", "source": "9", "target": "10", "animated": true},
+			{"id": "e10-11", "source": "10", "target": "11", "animated": true}
+		  ]
+		}
+	  },
+	  {
+		"key": "VR Expert",
+		"value": {
+		  "initialNodes": [
+			{"id": "1", "position": {"x": 0, "y": 0}, "data": {"label": "기초 프로그래밍"}, "type": "default"},
+			{"id": "2", "position": {"x": 0, "y": 100}, "data": {"label": "수학 (선형대수, 통계학)"}, "type": "default"},
+			{"id": "3", "position": {"x": 0, "y": 200}, "data": {"label": "컴퓨터 그래픽스 기초"}, "type": "default"},
+			{"id": "4", "position": {"x": 0, "y": 300}, "data": {"label": "3D 모델링 및 애니메이션"}, "type": "default"},
+			{"id": "5", "position": {"x": 0, "y": 400}, "data": {"label": "VR 하드웨어 및 SDK 이해"}, "type": "default"},
+			{"id": "6", "position": {"x": 0, "y": 500}, "data": {"label": "VR 엔진 활용 (Unity/Unreal)"}, "type": "default"},
+			{"id": "7", "position": {"x": 0, "y": 600}, "data": {"label": "UX/UI 및 인터랙션 디자인"}, "type": "default"},
+			{"id": "8", "position": {"x": 0, "y": 700}, "data": {"label": "공간 음향 및 사운드 디자인"}, "type": "default"},
+			{"id": "9", "position": {"x": 0, "y": 800}, "data": {"label": "네트워킹 및 멀티플레이 VR"}, "type": "default"},
+			{"id": "10", "position": {"x": 0, "y": 900}, "data": {"label": "성능 최적화 및 테스트"}, "type": "default"},
+			{"id": "11", "position": {"x": 0, "y": 1000}, "data": {"label": "프로젝트 관리"}, "type": "default"}
+		  ],
+		  "initialEdges": [
+			{"id": "e1-2", "source": "1", "target": "2", "animated": true},
+			{"id": "e2-3", "source": "2", "target": "3", "animated": true},
+			{"id": "e3-4", "source": "3", "target": "4", "animated": true},
+			{"id": "e4-5", "source": "4", "target": "5", "animated": true},
+			{"id": "e5-6", "source": "5", "target": "6", "animated": true},
+			{"id": "e6-7", "source": "6", "target": "7", "animated": true},
+			{"id": "e7-8", "source": "7", "target": "8", "animated": true},
+			{"id": "e8-9", "source": "8", "target": "9", "animated": true},
+			{"id": "e9-10", "source": "9", "target": "10", "animated": true},
+			{"id": "e10-11", "source": "10", "target": "11", "animated": true}
+		  ]
+		}
+	  },
+	  {
+		"key": "UX engineer",
+		"value": {
+		  "initialNodes": [
+			{"id": "1", "position": {"x": 0, "y": 0}, "data": {"label": "기초 프로그래밍"}, "type": "default"},
+			{"id": "2", "position": {"x": 0, "y": 100}, "data": {"label": "웹 기초 (HTML/CSS, JS)"}, "type": "default"},
+			{"id": "3", "position": {"x": 0, "y": 200}, "data": {"label": "UX 개념 및 사용자 중심 디자인"}, "type": "default"},
+			{"id": "4", "position": {"x": 0, "y": 300}, "data": {"label": "정보구조(IA) 및 와이어프레밍"}, "type": "default"},
+			{"id": "5", "position": {"x": 0, "y": 400}, "data": {"label": "사용자 리서치 (인터뷰, 설문)"}, "type": "default"},
+			{"id": "6", "position": {"x": 0, "y": 500}, "data": {"label": "디자인 툴 실습(Figma, Sketch)"}, "type": "default"},
+			{"id": "7", "position": {"x": 0, "y": 600}, "data": {"label": "UI 디자인 가이드라인 및 패턴"}, "type": "default"},
+			{"id": "8", "position": {"x": 0, "y": 700}, "data": {"label": "접근성(Accessibility) 표준"}, "type": "default"},
+			{"id": "9", "position": {"x": 0, "y": 800}, "data": {"label": "프로토타이핑 & 사용자 테스트"}, "type": "default"},
+			{"id": "10", "position": {"x": 0, "y": 900}, "data": {"label": "분석(Analytics) 및 A/B 테스트"}, "type": "default"},
+			{"id": "11", "position": {"x": 0, "y": 1000}, "data": {"label": "프로젝트 관리"}, "type": "default"}
+		  ],
+		  "initialEdges": [
+			{"id": "e1-2", "source": "1", "target": "2", "animated": true},
+			{"id": "e2-3", "source": "2", "target": "3", "animated": true},
+			{"id": "e3-4", "source": "3", "target": "4", "animated": true},
+			{"id": "e4-5", "source": "4", "target": "5", "animated": true},
+			{"id": "e5-6", "source": "5", "target": "6", "animated": true},
+			{"id": "e6-7", "source": "6", "target": "7", "animated": true},
+			{"id": "e7-8", "source": "7", "target": "8", "animated": true},
+			{"id": "e8-9", "source": "8", "target": "9", "animated": true},
+			{"id": "e9-10", "source": "9", "target": "10", "animated": true},
+			{"id": "e10-11", "source": "10", "target": "11", "animated": true}
+		  ]
+		}
+	  }
+	]
+  }
+  
