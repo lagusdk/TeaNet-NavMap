@@ -7,15 +7,25 @@ import "../css/Roadmap.css";
 const GenerateRoadmap = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const type = queryParams.get("type") || `1`; // 기본값을 1로 설정
   const key = queryParams.get("key") || `key`;
 
   const [nodes, setNodes] = useState([]);
   const [edges, setEdges] = useState([]);
 
+  const getlink = () => {
+    switch (key) {
+      case "Data Science":
+        return "major_IC.json";
+      case "Visual Technology":
+        return "major_IC.json";
+      default:
+        return "career_IC.json";
+    }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
-      const link = type === "2" ? `/major_IC.json` : `/career_IC.json`; // type에 따라 JSON 파일 선택
+      const link = getlink();
 
       try {
         const response = await fetch(link);
@@ -37,11 +47,11 @@ const GenerateRoadmap = () => {
     };
 
     fetchData();
-  }, [key, type]); // key와 type을 의존성 배열에 추가
+  }, [key]);
 
   return (
     <div className="generate-roadmap-container">
-      <GenerateHeader type={type} /> {/* key를 전달하지 않음 */}
+      <GenerateHeader />
       <Roadmap nodes={nodes} edges={edges} />
     </div>
   );

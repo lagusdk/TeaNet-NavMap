@@ -4,7 +4,7 @@ import "../css/GenerateHeader.css";
 import refresh from "../imgs/refresh.svg";
 import download from "../imgs/download.svg";
 
-const GenerateHeader = ({ type }) => {
+const GenerateHeader = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -24,10 +24,10 @@ const GenerateHeader = ({ type }) => {
         return "VR Expert";
       case "UX engineer":
         return "UX Designer";
-      case "데이터사이언스 Data Science":
-        return "Data Science";
-      case "비주얼 테크놀로지 Visual Technology":
-        return "Visual Technology";
+      case "Data Science":
+        return "데이터사이언스 Data Science";
+      case "Visual Technology":
+        return "비주얼 테크놀로지 Visual Technology";
       default:
         return "로드맵"; // 기본 제목
     }

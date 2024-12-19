@@ -25,13 +25,17 @@ const MajorPath = () => {
         <div className="majorbtns">
           <button
             className="majorButton"
-            onClick={() => selectMajor("Data Science")}
+            onClick={() => {
+              navigate(`/roadmap?key=Data Science`);
+            }}
           >
             데이터 사이언스 전공
           </button>
           <button
             className="majorButton"
-            onClick={() => selectMajor("Visual Tech")}
+            onClick={() => {
+              navigate(`/roadmap?key=Visual Technology`);
+            }}
           >
             비주얼 테크놀로지 전공
           </button>
@@ -49,9 +53,6 @@ const MajorPath = () => {
           <button className="majorButton">인공지능전공</button>
         </div>
       </div>
-      <button className="roadmapButton" onClick={createRoadmap}>
-        로드맵 생성
-      </button>
     </div>
   );
 };
