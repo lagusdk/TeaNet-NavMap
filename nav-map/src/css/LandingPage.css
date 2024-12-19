@@ -37,7 +37,7 @@
   transform: translateY(50px);
   transition: opacity 1.5s ease-out, transform 1.5s ease-out;
   transition-delay: 0.2s;
-  transform: translateY(-5px);
+  transform: translateY(-20px);
 }
 
 .landing .button.large.visible {
@@ -105,6 +105,10 @@
 }
 
 .landing .card {
+  width: 30vw;
+  margin: 0 auto;
+  margin-bottom: 10rem;
+
   background-color: #1a1a1a;
   border: 1px solid #2d2d2d;
   padding: 2rem;
@@ -217,12 +221,12 @@
 }
 
 .landing .call-to-action {
-  background-color: #1a1a1a;
-  padding: 2rem;
+  padding: 10rem;
   border-radius: 1rem;
   text-align: center;
   margin: auto;
-  margin-bottom: 4rem;
+  margin-bottom: 10rem;
+  height: 10vh;
   width: 40vw;
 }
 

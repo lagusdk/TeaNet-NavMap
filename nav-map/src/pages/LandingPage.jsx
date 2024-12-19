@@ -65,13 +65,17 @@ const LandingPage = () => {
   return (
     <div className="landing">
       {/* Hero Section */}
-      <div className="hero-section fade-in" ref={(el) => fadeInElementsRef.current.push(el)}>
+      <div
+        className="hero-section fade-in"
+        ref={(el) => fadeInElementsRef.current.push(el)}
+      >
         <div className="text-center">
           <h2 className="hero-title" ref={heroTitleRef}>
             AI가 제시하는 <span className="highlight">맞춤형 길잡이</span>
           </h2>
           <p className="hero-subtitle" ref={heroSubtitleRef}>
-            전공 커리큘럼부터 진로 계획까지, <br /> 당신만의 특별한 여정을 AI와 함께 설계하세요
+            전공 커리큘럼부터 진로 계획까지, <br /> 당신만의 특별한 여정을 AI와
+            함께 설계하세요
           </p>
           <div className="button-container">
             <button
@@ -86,36 +90,56 @@ const LandingPage = () => {
       </div>
 
       {/* Main Features */}
-      <div className="features-container fade-in" ref={(el) => fadeInElementsRef.current.push(el)}>
+      <div
+        className="features-container fade-in"
+        ref={(el) => fadeInElementsRef.current.push(el)}
+      >
         {/* 전공 로드맵 카드 */}
-        <div className="card fade-in" ref={(el) => fadeInElementsRef.current.push(el)}>
+        <div
+          className="card fade-in"
+          ref={(el) => fadeInElementsRef.current.push(el)}
+        >
           <div className="icon-container">
             <span className="icon">📖</span>
           </div>
           <h3 className="card-title">전공 로드맵</h3>
           <ul className="card-description">
-            <li className="feature-item">➡️ 관심 키워드 기반 학과 커리큘럼 설계</li>
+            <li className="feature-item">
+              ➡️ 관심 키워드 기반 학과 커리큘럼 설계
+            </li>
             <li className="feature-item">➡️ 복수전공/부전공 연계 추천</li>
             <li className="feature-item">➡️ 학기별 최적화된 과목 조합 제안</li>
           </ul>
         </div>
 
         {/* 진로 로드맵 카드 */}
-        <div className="card fade-in" ref={(el) => fadeInElementsRef.current.push(el)}>
+        <div
+          className="card fade-in"
+          ref={(el) => fadeInElementsRef.current.push(el)}
+        >
           <div className="icon-container">
             <span className="icon">🎯</span>
           </div>
           <h3 className="card-title">진로 로드맵</h3>
           <ul className="card-description">
-            <li className="feature-item">➡️ 희망 진로별 맞춤형 역량 개발 가이드</li>
-            <li className="feature-item">➡️ 산업 트렌드 기반 커리어 방향 제시</li>
-            <li className="feature-item">➡️ 단계별 목표 설정 및 실행 계획 수립</li>
+            <li className="feature-item">
+              ➡️ 희망 진로별 맞춤형 역량 개발 가이드
+            </li>
+            <li className="feature-item">
+              ➡️ 산업 트렌드 기반 커리어 방향 제시
+            </li>
+            <li className="feature-item">
+              ➡️ 단계별 목표 설정 및 실행 계획 수립
+            </li>
           </ul>
         </div>
       </div>
 
       {/* How It Works */}
-      <div className="how-it-works fade-in" ref={(el) => fadeInElementsRef.current.push(el)}>
+      <div
+        className="how-it-works fade-in"
+        ref={(el) => fadeInElementsRef.current.push(el)}
+      >
         <h3 className="section-title">AI 기반 맞춤형 가이드</h3>
         <div className="steps-container vertical">
           {["01", "02", "03"].map((num, idx) => (
@@ -131,7 +155,11 @@ const LandingPage = () => {
                 <span className="step-number">{num}</span>
               </div>
               <h4 className="step-title">
-                {num === "01" ? "키워드 선택" : num === "02" ? "AI 분석" : "맞춤형 플랜"}
+                {num === "01"
+                  ? "키워드 선택"
+                  : num === "02"
+                  ? "AI 분석"
+                  : "맞춤형 플랜"}
               </h4>
               <p className="step-description">
                 {num === "01"
@@ -146,7 +174,10 @@ const LandingPage = () => {
       </div>
 
       {/* Call to Action */}
-      <div className="call-to-action fade-in" ref={(el) => fadeInElementsRef.current.push(el)}>
+      <div
+        className="call-to-action fade-in"
+        ref={(el) => fadeInElementsRef.current.push(el)}
+      >
         <h3 className="section-title">나만의 길을 찾아보세요</h3>
         <p className="cta-description">AI와 함께 더 명확한 미래를 설계하세요</p>
         <div className="button-container">
