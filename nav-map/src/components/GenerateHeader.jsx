@@ -1,14 +1,36 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "../css/GenerateHeader.css";
 import refresh from "../imgs/refresh.svg";
 import download from "../imgs/download.svg";
 
 const GenerateHeader = ({ type }) => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const key = queryParams.get("key") || "로드맵"; // 기본값 설정
 
   const handleJobOrMajorClick = () => {
     navigate("/job-or-major");
+  };
+
+  const getTitle = () => {
+    switch (key) {
+      case "Big Data Analyst":
+        return "Big Data Analyst";
+      case "AI Expert":
+        return "AI Engineer";
+      case "VR Expert":
+        return "VR Expert";
+      case "UX engineer":
+        return "UX Designer";
+      case "데이터사이언스 Data Science":
+        return "Data Science";
+      case "비주얼 테크놀로지 Visual Technology":
+        return "Visual Technology";
+      default:
+        return "로드맵"; // 기본 제목
+    }
   };
 
   return (
@@ -25,28 +47,10 @@ const GenerateHeader = ({ type }) => {
       </div>
 
       <div className="content-section">
-        {type == 1 ? (
-          <>
-            <h1 className="roadmap-title">AI Engineer</h1>
-            <p className="roadmap-description">
-              선택한 분야에 대한 로드맵을 AI로 생성했습니다.
-            </p>
-          </>
-        ) : type == 2 ? (
-          <>
-            <h1 className="roadmap-title">Data Science</h1>
-            <p className="roadmap-description">
-              선택한 세부 전공에 대한 로드맵을 AI로 생성했습니다.
-            </p>
-          </>
-        ) : type == 3 ? (
-          <>
-            <h1 className="roadmap-title">웹 개발</h1>
-            <p className="roadmap-description">
-              선택한 개념에 대한 로드맵을 AI로 생성했습니다.
-            </p>
-          </>
-        ) : null}
+        <h1 className="roadmap-title">{getTitle()}</h1>
+        <p className="roadmap-description">
+          선택한 직무에 대한 로드맵을 AI로 생성했습니다.
+        </p>
       </div>
     </div>
   );

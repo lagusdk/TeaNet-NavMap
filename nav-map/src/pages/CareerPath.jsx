@@ -9,18 +9,23 @@ const CareerPath = () => {
   const [isAnimating, setIsAnimating] = useState(true);
 
   const handleCreateBtnClick = () => {
-    navigate(`/roadmap?type=1`);
+    if (selectedItem !== null) {
+      const jobKeys = [
+        "Big Data Analyst",
+        "AI Expert",
+        "VR Expert",
+        "UX engineer",
+      ];
+      const selectedJobKey = jobKeys[selectedItem % jobKeys.length]; // 인덱스 조정
+      navigate(`/roadmap?key=${selectedJobKey}`);
+    }
   };
 
   const items = [
-    { id: 1, contents: "IT Product Manager" },
-    { id: 2, contents: "Software Engineer" },
-    { id: 3, contents: "Data Scientist" },
-    { id: 4, contents: "UX Designer" },
-    { id: 5, contents: "DevOps Engineer" },
-    { id: 6, contents: "Cloud Architect" },
-    { id: 7, contents: "AI Engineer" },
-    { id: 8, contents: "Security Expert" },
+    { id: 1, contents: "Big Data Analyst" },
+    { id: 2, contents: "AI Expert" },
+    { id: 3, contents: "VR Expert" },
+    { id: 4, contents: "UX Engineer" },
   ];
 
   const [loopItems, setLoopItems] = useState([
