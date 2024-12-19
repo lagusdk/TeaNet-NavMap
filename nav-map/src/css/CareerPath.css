@@ -1,6 +1,5 @@
 .career-container {
   width: 100%;
-  min-height: 100vh;
   background-color: black;
 }
 
@@ -16,103 +15,37 @@
 }
 
 .slider-container {
-  position: relative;
-  overflow: hidden;
   margin-bottom: 3rem;
   display: flex;
   justify-content: center;
 }
 
-.slider-container::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 15%;
-  height: 100%;
-  background: linear-gradient(to right, black, transparent);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.slider-container::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 15%;
-  height: 100%;
-  background: linear-gradient(to left, black, transparent);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.slide-navigation {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.slide-navigation.prev {
-  left: 3rem;
-}
-
-.slide-navigation.next {
-  right: 3rem;
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.slider-container:hover .slide-navigation {
-  opacity: 1;
-}
-
-.slide-navigation button {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: none;
-  color: white;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  transition: background-color 0.3s ease;
-}
-
-.slide-navigation button:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
 .slider-wrapper {
   display: flex;
-  gap: 1rem;
+  gap: 5vw;
   transition: transform 0.5s ease-in-out;
-  max-width: 80%;
+  max-width: 75%;
   margin: 0 auto;
   position: relative;
   z-index: 0;
 }
 
 .slider-item {
-  flex-shrink: 0;
+  display: flex;
+  margin-bottom: 15vh;
 }
 
 .career-button {
-  padding: 0.75rem 2rem;
+  margin: 0 auto;
   border-radius: 20px;
+  border: none;
   border: 3px solid red;
   color: white;
-  font-size: 1rem;
+  font-size: 1.5rem;
   transition: all 0.3s;
   background-color: black;
   width: 20vw;
   height: 30vh;
-  font-size: 1.5rem;
 }
 
 .career-button:hover {
@@ -130,15 +63,37 @@
 }
 
 .create-button {
-  background-color: red;
+  background-color: #ff0000;
   color: white;
-  padding: 0.75rem 3rem;
-  border-radius: 10px;
-  transition: background-color 0.3s;
-  font-weight: bold;
-  font-size: 1rem;
+  padding: 1rem 2rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+  visibility: visible;
+  opacity: 1;
+}
+
+.create-button.large {
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+  transition-delay: 0.2s;
+  transform: translateY(-20px);
 }
 
 .create-button:hover {
-  background-color: #c53030;
+  background-color: #ff4d4d;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 77, 77, 0.5);
 }
