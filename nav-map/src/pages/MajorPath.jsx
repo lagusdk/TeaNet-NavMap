@@ -5,13 +5,8 @@ import "../css/MajorPath.css";
 const MajorPath = () => {
   const navigate = useNavigate(); // useNavigate 훅을 사용하여 네비게이션 기능을 추가
 
-  const selectMajor = (major) => {
-    // alert(`${major} 전공이 선택되었습니다.`);
-  };
-
-  const createRoadmap = () => {
-    // alert("로드맵이 생성되었습니다.");
-    navigate("/roadmap?type=2"); // type 2로 연결
+  const selectMajor = () => {
+    alert(`해당 전공은 아직 준비 중입니다.`);
   };
 
   return (
@@ -43,14 +38,22 @@ const MajorPath = () => {
 
         <p className="departmentName">컴퓨터정보공학부</p>
         <div className="majorbtns">
-          <button className="majorButton">지능컴퓨팅시스템전공</button>
-          <button className="majorButton">지능정보전공</button>
+          <button className="majorButton" onClick={() => selectMajor()}>
+            지능컴퓨팅시스템전공
+          </button>
+          <button className="majorButton" onClick={() => selectMajor()}>
+            지능정보전공
+          </button>
         </div>
 
         <p className="departmentName">소프트웨어학부</p>
         <div className="majorbtns">
-          <button className="majorButton">소프트웨어전공</button>
-          <button className="majorButton">인공지능전공</button>
+          <button className="majorButton" onClick={() => selectMajor()}>
+            소프트웨어전공
+          </button>
+          <button className="majorButton" onClick={() => selectMajor()}>
+            인공지능전공
+          </button>
         </div>
       </div>
     </div>
