@@ -16,7 +16,7 @@
   padding: 0.5rem 1rem;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   font-size: 1rem;
   display: flex;
   align-items: center;
@@ -36,7 +36,7 @@
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-  transition-delay: 0.4s;
+  transition-delay: 0.2s;
   transform: translateY(-5px);
 }
 
@@ -100,6 +100,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 8rem;
+  width: 95vw;
   margin: 8rem auto;
 }
 
@@ -220,7 +221,9 @@
   padding: 2rem;
   border-radius: 1rem;
   text-align: center;
+  margin: auto;
   margin-bottom: 4rem;
+  width: 40vw;
 }
 
 .landing .cta-description {
